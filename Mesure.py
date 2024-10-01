@@ -1,6 +1,6 @@
 class Measure ():
     def __init__(self) :
-        pass
+        self.instrument = None
     
     def getResults(self) :
         pass
