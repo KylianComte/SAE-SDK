@@ -6,6 +6,12 @@
 # Imports
 import pyvisa
 
+#0. Find instruments
+
+def instrumentscan() :
+    resourceManager = pyvisa.ResourceManager()
+    print(resourceManager.list_resources())
+
 #1. Design instrument
 
 class Instrument (): 
@@ -36,11 +42,11 @@ class Result ():
     def __init__(self) :
         pass
 
-    def setReport(self, report) :
-        pass
-
 class Report ():
     def __init__(self) :
+        pass
+
+    def setReport(self, report) :
         pass
 
 class Measure ():
