@@ -1,11 +1,13 @@
 # Script to run the SAE SDK
-from .Mesure import*
-from .Instrument import*
-from .Report import*
-from .Resultats import*
+
+from .Mesure import Measure
+from .Instrument import Arv
+from .Report import Report
+from .Resultats import Resultats
 
 # Imports
 import pyvisa
+
 
 #0. Find instruments
 
