@@ -15,7 +15,7 @@ class Instrument ():
             print("Erreur lors de la connexion, veuillez relancer le programme")
             exit()
         print("Instrument connecté avec succès !")
-        print(description)
+        print({description} + " est prêt à être utilisé !")
 
     def preset(self) :
         pass
