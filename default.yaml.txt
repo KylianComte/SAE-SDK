@@ -19,7 +19,7 @@ devices:
         r: "\n"
     error: ERROR
     dialogues:
-      - q: "?IDN"
+      - q: "*IDN?"
         r: "LSG Serial #1234"
       - q: "!CAL"
         r: OK
