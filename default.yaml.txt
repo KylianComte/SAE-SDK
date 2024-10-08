@@ -5,24 +5,12 @@ devices:
       ASRL INSTR:
         q: "\r\n"
         r: "\n"
-      USB INSTR:
-        q: "\n"
-        r: "\n"
-      TCPIP INSTR:
-        q: "\n"
-        r: "\n"
-      TCPIP SOCKET:
-        q: "\n"
-        r: "\n"
-      GPIB INSTR:
-        q: "\n"
-        r: "\n"
-    error: ERROR
     dialogues:
       - q: "*IDN?"
         r: "LSG Serial #1234"
       - q: "!CAL"
         r: OK
+    error: ERROR
     properties:
       frequency:
         default: 100.0
@@ -88,18 +76,11 @@ devices:
       ASRL INSTR:
         q: "\r\n"
         r: "\n"
-      USB INSTR:
-        q: "\n"
-        r: "\n"
-      TCPIP INSTR:
-        q: "\n"
-        r: "\n"
-      GPIB INSTR:
-        q: "\n"
-        r: "\n"
     dialogues:
       - q: "*IDN?"
         r: "SCPI,MOCK,VERSION_1.0"
+      - q: "*RST"
+        r: "Reset ok !"
     error:
       status_register:
         - q: "*ESR?"
@@ -153,15 +134,6 @@ devices:
       ASRL INSTR:
         q: "\r\n"
         r: "\n"
-      USB INSTR:
-        q: "\n"
-        r: "\n"
-      TCPIP INSTR:
-        q: "\n"
-        r: "\n"
-      GPIB INSTR:
-        q: "\n"
-        r: "\n"
     dialogues:
       - q: "*IDN?"
         r: "SCPI,MOCK,VERSION_1.0"
@@ -211,15 +183,6 @@ devices:
     eom:
       ASRL INSTR:
         q: "\r\n"
-        r: "\n"
-      USB INSTR:
-        q: "\n"
-        r: "\n"
-      TCPIP INSTR:
-        q: "\n"
-        r: "\n"
-      GPIB INSTR:
-        q: "\n"
         r: "\n"
     dialogues:
       - q: "*IDN?"
@@ -285,46 +248,13 @@ devices:
 resources:
   ASRL1::INSTR:
     device: device 1
-  USB::0x1111::0x2222::0x1234::INSTR:
-    device: device 1
-  TCPIP::localhost::INSTR:
-    device: device 1
-  TCPIP::localhost::10001::SOCKET:
-    device: device 1
-  GPIB::8::INSTR:
-    device: device 1
   ASRL2::INSTR:
-    device: device 2
-  USB::0x1111::0x2222::0x2468::INSTR:
-    device: device 2
-  TCPIP::localhost:2222::INSTR:
-    device: device 2
-  GPIB::9::INSTR:
     device: device 2
   ASRL3::INSTR:
     device: device 3
-  USB::0x1111::0x2222::0x3692::INSTR:
-    device: device 3
-  TCPIP::localhost:3333::INSTR:
-    device: device 3
-  GPIB::10::INSTR:
-    device: device 3
   ASRL4::INSTR:
-    device: device 4
-  USB::0x1111::0x2222::0x4444::INSTR:
-    device: device 4
-  TCPIP::localhost:4444::INSTR:
-    device: device 4
-  GPIB::4::INSTR:
     device: device 4
   ASRL5::INSTR:
     device: device 5
-  USB::0x1111::0x2222::0x5555::INSTR:
-    device: device 5
-  TCPIP::localhost:5555::INSTR:
-    device: device 5
-  GPIB::5::INSTR:
-    device: device 5
-  USB::0x1111::0x2222::0x4445::RAW:
-    device: device 1
+ 
 

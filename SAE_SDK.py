@@ -5,6 +5,7 @@
 #from .Resultats import Resultats
 
 # Imports
+import time
 import pyvisa
 from Instrument import Instrument, Arv
 
@@ -51,4 +52,5 @@ else :
 
 print("Connexion à l'instrument...")
 instrument.connect()
-
+time.sleep(1)
+instrument.preset()

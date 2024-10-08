@@ -26,5 +26,5 @@ class Arv(Instrument) :
         super().__init__(name, 'ARV', adress)
 
     def preset(self) :
-        self.instrument.write('*RST')
+        print(self.instrument.query('*RST'))
 
