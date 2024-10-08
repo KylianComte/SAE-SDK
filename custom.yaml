@@ -1,4 +1,4 @@
-spec: "1.0"
+spec: "1.1"
 devices:
   device 1:
     eom:

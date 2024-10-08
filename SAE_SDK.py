@@ -13,7 +13,7 @@ from Instrument import Instrument, Arv
 #0. Find instruments
 
 def instrumentscan() :
-    resourceManager = pyvisa.ResourceManager('@sim')
+    resourceManager = pyvisa.ResourceManager('custom.yaml@sim')
     return resourceManager.list_resources()
 
 
@@ -52,5 +52,3 @@ else :
 
 print("Connexion à l'instrument...")
 instrument.connect()
-time.sleep(1)
-instrument.preset()
