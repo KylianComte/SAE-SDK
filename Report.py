@@ -29,8 +29,8 @@ class Report ():
     def content(self):
         self.pdf.setFillColorRGB(0,0,0)
         self.pdf.setFont("Helvetica-Bold", 12)
-        self.pdf.drawText(f"Nom de l'instrument : " {self.resultat.result["1"]})
-        self.pdf.drawText(f"Mesure de l'instrument : " {self.resultat.result["2"]})
+        self.pdf.drawText("Nom de l'instrument : ")
+        self.pdf.drawText("Mesure de l'instrument : " )
         
 
     def save(self):
