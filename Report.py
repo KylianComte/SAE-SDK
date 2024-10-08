@@ -31,7 +31,6 @@ class Report ():
         self.pdf.setFont("Helvetica-Bold", 12)
         self.pdf.drawText("Nom de l'instrument : ")
         self.pdf.drawText("Mesure de l'instrument : " )
-        
 
     def save(self):
         self.pdf.save()

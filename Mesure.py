@@ -93,18 +93,18 @@ class BandeRejet (Measure) :
         #TODO : return results = self.result
 
 class Selectivite_formfactor (Measure) :
-    def __init__(self) :
+    def __init__(self,rejection) :
         super().__init__()
         self.type = "Sélectivité, facteur de forme"
+        self.rejection = rejection
         self.result = None
 
     def getResults(self) :
         print("Mesure de la sélectivité et le facteur de forme")
-        print("Mesure en cours...")
-        mesbp = BandePassante
+        mesbp = BandePassante()
         mesbp.getResults()
         bp = mesbp.result
-        mesbr = BandeRejet
+        mesbr = BandeRejet(self.rejection)
         mesbr.getResults()
         br = mesbr.result
         #TODO : calculate selectivity and form factor

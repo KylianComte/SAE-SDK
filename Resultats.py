@@ -3,14 +3,44 @@ class Result ():
         self.instrument = instrument
         self.mesure = mesure
         self.resultat = None
-        self.pert = pert
     
     def formatResultat(self):
-        if self.mesure.type
-        self.resultat = {"name" : self.instrument.name, 
-                         "type_mesure" : self.instrument.type, 
-                         "resultat" : self.mesure.result,
-                         "f0" :  self.pert.freq
-                         "BP" : self.
-                         }
+        if str(self.mesure.type) == "Pertes d'insertion" : 
+            self.resultat = {"name" : self.instrument.name, 
+                             "type_mesure" : self.instrument.type, 
+                             "resultat" : self.mesure.result,
+                             "f0" :  self.mesure.freq
+                             }
+            
+        if str(self.mesure.type) == "Pertes de réflexion" : 
+            self.resultat = {"name" : self.instrument.name, 
+                             "type_mesure" : self.instrument.type, 
+                             "resultat" : self.mesure.result,
+                             "f0" :  self.mesure.freq
+                             }
+
+        if str(self.mesure.type) == "Fréquence centrale" : 
+            self.resultat = {"name" : self.instrument.name, 
+                             "type_mesure" : self.instrument.type, 
+                             "resultat" : self.mesure.result,
+                             "f0" :  self.mesure.freq
+                             }
+            
+        if str(self.mesure.type) == "Bande passante 3dB" : 
+            self.resultat = {"name" : self.instrument.name, 
+                             "type_mesure" : self.instrument.type, 
+                             "resultat" : self.mesure.result,
+                             }
+        if str(self.mesure.type) == "Bande passante 3dB" : 
+            self.resultat = {"name" : self.instrument.name, 
+                             "type_mesure" : self.instrument.type, 
+                             "resultat" : self.mesure.result,
+                             }
+        
+        if str(self.mesure.type[:20]) == "Bande de réjection à" :
+            self.resultat = {"name" : self.instrument.name, 
+                             "type_mesure" : self.instrument.type, 
+                             "resultat" : self.mesure.result,
+                             }
+                
         

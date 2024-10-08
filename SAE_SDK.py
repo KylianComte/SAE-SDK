@@ -1,6 +1,5 @@
 # Script to run the SAE SDK
 
-#from .Mesure import Measure
 #from .Report import Report
 #from .Resultats import Resultats
 
@@ -8,6 +7,7 @@
 import time
 import pyvisa
 from Instrument import Instrument, Arv
+from Mesure import Measure, Pertes, PertesInsertion, PertesReflection, FrequenceCentrale, BandePassante, Selectivite_formfactor, BandeRejet
 
 
 #0. Find instruments
@@ -74,3 +74,22 @@ choix = int(input())
 while (choix < 1 or choix > 6) :
     print("Entrée invalide : Veuillez choisir un nombre entre 1 et 6")
     choix = int(input())
+
+if (choix == 1) :
+    mesure = FrequenceCentrale()
+    mesure.getResults()
+if (choix == 2) :
+    frequence = int(input("Entrez la fréquence de mesure (MHz)"))
+    mesure = PertesInsertion()
+    mesure.getResults()
+if (choix == 3) :
+    mesure = BandePassante()
+    mesure.getResults()
+if (choix == 4) :
+    rejet = int(input("Entrez la valeur de rejet (dB)"))
+    mesure = BandeRejet(rejet)
+    mesure.getResults()
+if (choix == 5) :
+    rejet = int(input("Entrez la valeur de rejet (dB)"))
+    mesure = Selectivite_formfactor(rejet)
+    mesure.getResults()
