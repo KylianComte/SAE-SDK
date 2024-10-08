@@ -33,7 +33,30 @@ class Arv(Instrument) :
 
     def calibration(self):
         #TODO : set frequencies (min, max, step)
+        print("Avant de calibration, veuillez entrer les plages de vos mesures :")
+        print("Fréquence minimale :(MHz)")
+        fmin = int(input())
+        print("Fréquence maximale :(MHz)")
+        fmax = int(input())
+        print("Pas de fréquence :(MHz)")
+        fstep = int(input())
         #TODO : set power (ref, div)
+        print("Puissance de référence :(dBm)")
+        pref = int(input())
+        print("Puissance par division :(dB)")
+        pdiv = int(input())
+        #TODO : set number of points
+        print("Nombre de points :")
+        n = int(input())
+
+
         print(self.instrument.query('!CAL'))
-        pass 
+        
+        print("Quelle calibration voulez-vous effectuer ?")
+        print("1. Calibration x")
+        print("2. Calibration x")
+        print("3. Calibration x")
+        
+        #TODO : calibrate
+        
 

@@ -1,8 +1,6 @@
 class Result ():
-    def __init__(self, name, mesure) :
-        self.name = name
-        self.mesure = mesure
-        self.resultat = {"name" : "self.name", "2" : "Fréquence centrale"}
+    def __init__(self, instrument, mesure) :
+        self.resultat = {"name" : instrument.name, "type mesure" : mesure.type, "result" : mesure.result}
     
     def getResultat(self):
         pass
