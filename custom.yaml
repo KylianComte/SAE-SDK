@@ -8,8 +8,10 @@ devices:
     dialogues:
       - q: "*IDN?"
         r: "LSG Serial #1234"
+      - q: "*RST"
+        r: "OK"
       - q: "!CAL"
-        r: OK
+        r: "CALIBRATED"
     error: ERROR
     properties:
       frequency:

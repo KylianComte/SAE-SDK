@@ -52,3 +52,9 @@ else :
 
 print("Connexion à l'instrument...")
 instrument.connect()
+
+print("Préparation de l'instrument...")
+instrument.preset()
+
+print("Calibration de l'instrument...")
+instrument.calibration()

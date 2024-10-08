@@ -20,6 +20,9 @@ class Instrument ():
     def preset(self) :
         pass
 
+    def calibration(self) :
+        pass
+
 
 class Arv(Instrument) :
     def __init__(self, name, adress) :
@@ -27,4 +30,10 @@ class Arv(Instrument) :
 
     def preset(self) :
         print(self.instrument.query('*RST'))
+
+    def calibration(self):
+        #TODO : set frequencies (min, max, step)
+        #TODO : set power (ref, div)
+        print(self.instrument.query('!CAL'))
+        pass 
 
