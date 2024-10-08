@@ -39,7 +39,7 @@ class Report ():
        self.title()
        self.save()
 
-mondoc = Report("Martin Russo & Kylian Comte", "Mesures.pdf", "Rapportd de mesure", "08/10/2024")
+mondoc = Report("Martin Russo & Kylian Comte", "Mesures.pdf", "Rapport de mesure", "08/10/2024")
 mondoc.create_pdf()
        
 

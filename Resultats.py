@@ -42,5 +42,6 @@ class Result ():
                              "type_mesure" : self.instrument.type, 
                              "resultat" : self.mesure.result,
                              }
+            
                 
         
