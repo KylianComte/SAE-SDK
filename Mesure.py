@@ -25,8 +25,6 @@ class PertesInsertion (Pertes) :
         print("Mesure en cours...")
         #TODO : measure
         print("Mesure terminée")
-        print("Appuyez sur entrée pour continuer")
-        input()
         #TODO : return results = self.result
 
 class PertesReflection (Pertes) :
@@ -39,8 +37,6 @@ class PertesReflection (Pertes) :
         print("Mesure en cours...")
         #TODO : measure
         print("Mesure terminée")
-        print("Appuyez sur entrée pour continuer")
-        input()
         
 
 class FrequenceCentrale (Measure) :
@@ -55,8 +51,6 @@ class FrequenceCentrale (Measure) :
         #TODO : measure max power
         #TODO : measure f-3dB and mean
         print("Mesure terminée")
-        print("Appuyez sur entrée pour continuer")
-        input()
         #TODO : return results = self.result
 
 class BandePassante (Measure) :
@@ -71,8 +65,6 @@ class BandePassante (Measure) :
         #TODO : measure max power
         #TODO : measure f-3dB and delta f
         print("Mesure terminée")
-        print("Appuyez sur entrée pour continuer")
-        input()
         #TODO : return results = self.result
 
 class BandeRejet (Measure) :
@@ -88,8 +80,6 @@ class BandeRejet (Measure) :
         #TODO : measure max power
         #TODO : measure f-XdB and delta f
         print("Mesure terminée")
-        print("Appuyez sur entrée pour continuer")
-        input()
         #TODO : return results = self.result
 
 class Selectivite_formfactor (Measure) :
@@ -107,10 +97,7 @@ class Selectivite_formfactor (Measure) :
         mesbr = BandeRejet(self.rejection)
         mesbr.getResults()
         br = mesbr.result
-        #TODO : calculate selectivity and form factor
         selectivity = bp/br
         formfactor = br/bp
         print("Mesure terminée")
-        print("Appuyez sur entrée pour continuer")
-        input()
-        #TODO : return results = self.result
+        self.result = [selectivity, formfactor]
