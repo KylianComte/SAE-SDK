@@ -15,8 +15,9 @@ class Result ():
             
         if self.mesure.type == "Pertes de réflexion" : 
             self.resultat = {"name" : self.instrument.name, 
-                             "type_mesure" : self.instrument.type, 
-                             "resultat" : self.mesure.results,
+                             "type_mesure" : self.mesure.type, 
+                             "type_instrument" : self.instrument.type,
+                             "resultat" : self.mesure.result,
                              "f0" :  self.mesure.freq
                             }
 

@@ -33,30 +33,38 @@ class Arv(Instrument) :
 
     def calibration(self):
         #TODO : set frequencies (min, max, step)
-        print("Avant de calibration, veuillez entrer les plages de vos mesures :")
-        print("Fréquence minimale :(MHz)")
-        fmin = int(input())
-        print("Fréquence maximale :(MHz)")
-        fmax = int(input())
-        print("Pas de fréquence :(MHz)")
-        fstep = int(input())
-        #TODO : set power (ref, div)
-        print("Puissance de référence :(dBm)")
-        pref = int(input())
-        print("Puissance par division :(dB)")
-        pdiv = int(input())
-        #TODO : set number of points
-        print("Nombre de points :")
-        n = int(input())
+        print("Garder les valeurs par défaut ? (O/N)")
+        keep = input()
+        while (keep != 'O' and keep != 'N') :
+            print("Entrée invalide : Veuillez entrer O ou N")
+            keep = input()
+        if (keep == 'N') :
+            print("Veuillez preciser les plages de vos mesures :")
+            print("Fréquence minimale :(MHz)")
+            fmin = int(input())
+            print("Fréquence maximale :(MHz)")
+            fmax = int(input())
+            print("Pas de fréquence :(MHz)")
+            fstep = int(input())
+            #TODO : set power (ref, div)
+            print("Puissance de référence :(dBm)")
+            pref = int(input())
+            print("Puissance par division :(dB)")
+            pdiv = int(input())
+            #TODO : set number of points
+            print("Nombre de points :")
+            n = int(input())
+        else :
+            print("Valeurs par défaut conservées, appareil prêt à être calibré")
 
-
-        print(self.instrument.query('!CAL'))
         
         print("Quelle calibration voulez-vous effectuer ?")
         print("1. Calibration x")
         print("2. Calibration x")
         print("3. Calibration x")
-        
+        input()
+        print(self.instrument.query('!CAL'))
         #TODO : calibrate
-        
+
+        print("Calibration terminée")
 

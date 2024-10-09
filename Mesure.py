@@ -25,7 +25,7 @@ class PertesInsertion (Pertes) :
         print("Mesure en cours...")
         print(self.instrument.query(f"!FREQ {self.freq}"))
         #TODO : measure S21
-        self.result = self.instrument.query("?AMP")
+        self.result = float(self.instrument.query("?AMP"))
         print("Mesure terminée")
 
 
@@ -35,11 +35,11 @@ class PertesReflection (Pertes) :
         self.type = "Pertes de réflexion"
 
     def getResults(self) :
-        print("Mesure des pertes de réflexion à la fréquence " + str(self.f) + "MHz")
+        print("Mesure des pertes de réflexion à la fréquence " + str(self.freq) + "MHz")
         print("Mesure en cours...")
         print(self.instrument.query(f"!FREQ {self.freq}"))
         #TODO : measure S11
-        self.result = self.instrument.query("?AMP")
+        self.result = float(self.instrument.query("?AMP"))
         print("Mesure terminée")
         
 
