@@ -8,7 +8,7 @@ import time
 import pyvisa
 from Instrument import Instrument, Arv
 from Mesure import Measure, Pertes, PertesInsertion, PertesReflection, FrequenceCentrale, BandePassante, Selectivite_formfactor, BandeRejet
-
+from Resultats import Result
 
 #0. Find instruments
 
@@ -77,19 +77,38 @@ while (choix < 1 or choix > 6) :
 
 if (choix == 1) :
     mesure = FrequenceCentrale()
+    mesure.setInstrument(instrument)
     mesure.getResults()
 if (choix == 2) :
     frequence = int(input("Entrez la fréquence de mesure (MHz)"))
-    mesure = PertesInsertion()
+    mesure = PertesInsertion(frequence)
+    mesure.setInstrument(instrument)
     mesure.getResults()
 if (choix == 3) :
     mesure = BandePassante()
+    mesure.setInstrument(instrument)
     mesure.getResults()
 if (choix == 4) :
     rejet = int(input("Entrez la valeur de rejet (dB)"))
     mesure = BandeRejet(rejet)
+    mesure.setInstrument(instrument)
     mesure.getResults()
 if (choix == 5) :
     rejet = int(input("Entrez la valeur de rejet (dB)"))
     mesure = Selectivite_formfactor(rejet)
+    mesure.setInstrument(instrument)
     mesure.getResults()
+if (choix == 6) :
+    frequence = int(input("Entrez la fréquence de mesure (MHz)"))
+    mesure = PertesReflection(frequence)
+    mesure.setInstrument(instrument)
+    mesure.getResults()
+
+resultat = Result(instrument, mesure)
+resultat.formatResultat()
+print("Résultat :")
+print(resultat.resultat)
+
+print("Generation du rapport...")
+nom_techniciens = input("Entrez le nom des techniciens séparés par une virgule")
+nom_document = input("Entrez le nom du document")

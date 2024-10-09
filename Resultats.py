@@ -7,7 +7,8 @@ class Result ():
     def formatResultat(self):
         if self.mesure.type == "Pertes d'insertion" : 
             self.resultat = {"name" : self.instrument.name,        # Nom de l'instrum
-                             "type_mesure" : self.instrument.type, # S21
+                             "type_mesure" : self.mesure.type, # S21
+                             "type_instrument" : self.instrument.type, # ARV
                              "resultat" : self.mesure.result,      # Resultat de S21
                              "f0" :  self.mesure.freq              # A quelle freq
                             }
@@ -45,8 +46,8 @@ class Result ():
         if self.mesure.type == "Sélectivité, facteur de forme" :
             self.resultat = {"name" : self.instrument.name, 
                              "type_mesure" : self.instrument.type, 
-                             "resultat[1]" : self.mesure.result,
-                             "resultat[2]" : self.mesure.reuslt,
+                             "resultat[1]" : self.mesure.result[0],
+                             "resultat[2]" : self.mesure.reuslt[1],
                             }
         
             

@@ -4,7 +4,7 @@ class Measure ():
         self.type = None
     
     def setInstrument(self, instrument) :
-        self.instrument = instrument
+        self.instrument = instrument.instrument
 
     def getResults(self) :
         pass
@@ -21,11 +21,13 @@ class PertesInsertion (Pertes) :
         self.type = "Pertes d'insertion"
 
     def getResults(self) :
-        print("Mesure des pertes d'insertion à la fréquence " + str(self.f) + "MHz")
+        print("Mesure des pertes d'insertion à la fréquence " + str(self.freq) + "MHz")
         print("Mesure en cours...")
-        #TODO : measure
+        print(self.instrument.query(f"!FREQ {self.freq}"))
+        #TODO : measure S21
+        self.result = self.instrument.query("?AMP")
         print("Mesure terminée")
-        #TODO : return results = self.result
+
 
 class PertesReflection (Pertes) :
     def __init__(self,frequence) :
@@ -35,7 +37,9 @@ class PertesReflection (Pertes) :
     def getResults(self) :
         print("Mesure des pertes de réflexion à la fréquence " + str(self.f) + "MHz")
         print("Mesure en cours...")
-        #TODO : measure
+        print(self.instrument.query(f"!FREQ {self.freq}"))
+        #TODO : measure S11
+        self.result = self.instrument.query("?AMP")
         print("Mesure terminée")
         
 
@@ -49,7 +53,6 @@ class FrequenceCentrale (Measure) :
         print("Mesure de la fréquence centrale")
         print("Mesure en cours...")
         #TODO : measure max power
-        #TODO : measure f-3dB and mean
         print("Mesure terminée")
         #TODO : return results = self.result
 
