@@ -31,7 +31,7 @@ devices:
         default: 1.0
         getter:
           q: "?AMP"
-          r: "{:.2f}"
+          r: "{RANDOM(-50, 50, 1):.2f}"
         setter:
           q: "!AMP {:.2f}"
           r: OK
