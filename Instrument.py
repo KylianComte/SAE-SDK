@@ -1,4 +1,5 @@
 import pyvisa
+import time
 
 class Instrument (): 
     def __init__(self, name, type, adress) :
@@ -15,7 +16,23 @@ class Instrument ():
             print("Erreur lors de la connexion, veuillez relancer le programme")
             exit()
         print("Instrument connecté avec succès !")
-        print(description + " est prêt à être utilisé !")
+        if (description == "choo") :
+            print("   _____                 . . . . . o o o o o")
+            time.sleep(0.5)
+            print("  __|[_]|__ ___________ _______    ____      o")
+            time.sleep(0.5)
+            print(" |[] [] []| [] [] [] [] [_____(__  ][]]_n_n__][.")
+            time.sleep(0.5)
+            print("_|________|_[_________]_[________]_|__|________)<")
+            time.sleep(0.5)
+            print("  oo    oo 'oo      oo ' oo    oo 'oo 0000---oo\ ")
+            time.sleep(0.5)
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            time.sleep(0.5)
+        else :
+            print(description)
+        input()
+
 
     def preset(self) :
         pass
