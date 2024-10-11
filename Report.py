@@ -14,7 +14,7 @@ class Report ():
         self.width, self.height = letter
         self.titredoc = "Certificat de conformité"
         self.date = datetime.datetime.now().strftime("%d-%m-%Y / %H : %M")
-        self.chemin_image = image
+        self.chemin_image = "chaine.jpg"
 
     def title(self) :
         self.pdf.setFillColorRGB(255,0,0)
@@ -69,19 +69,5 @@ resultat = {"name" : "ARV2",
             "f0" : "1GHz"
             }
 
-mondoc = Report("E", "Mesure.pdf", r"C:\Users\mar04\OneDrive\Images\chaine.jpg")
+mondoc = Report("E", "Mesure.pdf", "chaine.jpg")
 mondoc.create_pdf_image() 
-
-
-
-
-num_taps = 51 # Il est utile d'utiliser un nombre impair de robinets.
-cut_off = 3000 # Hz
-sample_rate = 32000 # Hz
-
-# créer notre filtre passe-bas
-h = signal.firwin(num_taps, cut_off, fs=sample_rate)
-
-# tracer la réponse impulsionnelle
-plt.plot(h, '.-')
-plt.show()
