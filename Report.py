@@ -1,5 +1,8 @@
 import reportlab 
 import datetime
+import numpy as np
+from scipy import signal
+import matplotlib.pyplot as plt
 from reportlab.lib.pagesizes import letter, A4
 from reportlab.pdfgen import canvas
 from reportlab.lib import colors
@@ -68,18 +71,20 @@ resultat = {"name" : "ARV2",
             "resultat" : "S11 = -25dB",
             "f0" : "1GHz"
             }
-#print("Quel est le nom du technicien qui effectue la mesure ? ")
-#name_technicien = input()
-#print("Voulez-vous inserez une image de la mesure ? O/N")
-#response = input()
-#if response == 'O' :
-#    print("Saisir le chemin d'accès de l'image à inserer")
-#    path_image = input()
-#    mondoc = Report(name_technicien, "Mesure.pdf", r"C:\Users\mar04\OneDrive\Images\chaine.jpg")
-#    mondoc.create_pdf_image()
-#else : 
-#    mondoc = Report(name_technicien, "Mesure.pdf", None)
-#    mondoc.create_pdf()
 
 mondoc = Report("E", "Mesure.pdf", r"C:\Users\mar04\OneDrive\Images\chaine.jpg")
-mondoc.create_pdf_image()
+mondoc.create_pdf_image() 
+
+
+
+
+num_taps = 51 # Il est utile d'utiliser un nombre impair de robinets.
+cut_off = 3000 # Hz
+sample_rate = 32000 # Hz
+
+# créer notre filtre passe-bas
+h = signal.firwin(num_taps, cut_off, fs=sample_rate)
+
+# tracer la réponse impulsionnelle
+plt.plot(h, '.-')
+plt.show()
