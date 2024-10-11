@@ -12,6 +12,8 @@ devices:
         r: "OK"
       - q: "!CAL"
         r: "CALIBRATED"
+      - q: "POW?"
+        r: "{RANDOM(-50, 50, 1):.2f}"
     error: ERROR
     properties:
       frequency:
