@@ -17,18 +17,9 @@ class Instrument ():
             exit()
         print("Instrument connecté avec succès !")
         if (description == "choo") :
-            print("   _____                 . . . . . o o o o o")
-            time.sleep(0.5)
-            print("  __|[_]|__ ___________ _______    ____      o")
-            time.sleep(0.5)
-            print(" |[] [] []| [] [] [] [] [_____(__  ][]]_n_n__][.")
-            time.sleep(0.5)
-            print("_|________|_[_________]_[________]_|__|________)<")
-            time.sleep(0.5)
-            print("  oo    oo 'oo      oo ' oo    oo 'oo 0000---oo\ ")
-            time.sleep(0.5)
-            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-            time.sleep(0.5)
+            train = ["   _____                 . . . . . o o o o o","  __|[_]|__ ___________ _______    ____      o"," |[] [] []| [] [] [] [] [_____(__  ][]]_n_n__][.","_|________|_[_________]_[________]_|__|________)<","  oo    oo 'oo      oo ' oo    oo 'oo 0000---oo\ ","~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"]
+            for line in train :
+                print(line)
         else :
             print(description)
         input()
