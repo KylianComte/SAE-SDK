@@ -1,8 +1,5 @@
 import reportlab 
 import datetime
-import numpy as np
-from scipy import signal
-import matplotlib.pyplot as plt
 from reportlab.lib.pagesizes import letter, A4
 from reportlab.pdfgen import canvas
 from reportlab.lib import colors
