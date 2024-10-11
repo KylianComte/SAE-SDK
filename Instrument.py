@@ -16,12 +16,8 @@ class Instrument ():
             print("Erreur lors de la connexion, veuillez relancer le programme")
             exit()
         print("Instrument connecté avec succès !")
-        if (description == "choo") :
-            train = ["   _____                 . . . . . o o o o o","  __|[_]|__ ___________ _______    ____      o"," |[] [] []| [] [] [] [] [_____(__  ][]]_n_n__][.","_|________|_[_________]_[________]_|__|________)<","  oo    oo 'oo      oo ' oo    oo 'oo 0000---oo\ ","~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"]
-            for line in train :
-                print(line)
-        else :
-            print(description)
+        print(description)
+        print("Appuyez sur entrée pour continuer")
         input()
 
 
@@ -112,4 +108,3 @@ class Arv(Instrument) :
             print(self.instrument.query('!CAL'))
 
         print("Calibration terminée")
-
