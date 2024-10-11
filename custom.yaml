@@ -7,7 +7,7 @@ devices:
         r: "\n"
     dialogues:
       - q: "*IDN?"
-        r: "LSG Serial #1234"
+        r: "ARV Simulation #1234"
       - q: "*RST"
         r: "OK"
       - q: "!CAL"
