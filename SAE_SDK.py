@@ -9,6 +9,7 @@ import pyvisa
 from Instrument import Instrument, Arv
 from Mesure import Measure, Pertes, PertesInsertion, PertesReflection, FrequenceCentrale, BandePassante, Selectivite_formfactor, BandeRejet
 from Resultats import Result
+from Report import Report
 
 #0. Find instruments
 
@@ -109,5 +110,16 @@ print("Résultat :")
 print(resultat.resultat)
 
 print("Generation du rapport...")
+mondoc = Report()
 nom_techniciens = input("Entrez le nom des techniciens séparés par une virgule\n")
 nom_document = input("Entrez le nom du document\n")
+print("Voulez-vous inserez une image de la mesure ? O/N")
+response = input()
+if response == 'O' :
+    print("Saisir le chemin d'accès de l'image à inserer")
+    path_image = input()
+    mondoc = Report(nom_techniciens, "Mesure.pdf", r"C:\Users\mar04\OneDrive\Images\chaine.jpg")
+    mondoc.create_pdf_image()
+else : 
+    mondoc = Report(nom_techniciens, "Mesure.pdf", None)
+    mondoc.create_pdf()
