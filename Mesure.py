@@ -52,9 +52,9 @@ class FrequenceCentrale (Measure) :
     def getResults(self) :
         print("Mesure de la fréquence centrale")
         print("Mesure en cours...")
-        #TODO : measure max power
+        fcent = 0 #TODO : measure max power
         print("Mesure terminée")
-        #TODO : return results = self.result
+        self.result = fcent
 
 class BandePassante (Measure) :
     def __init__(self) :
@@ -65,10 +65,13 @@ class BandePassante (Measure) :
     def getResults(self) :
         print("Mesure de la bande passante 3dB")
         print("Mesure en cours...")
-        #TODO : measure max power
-        #TODO : measure f-3dB and delta f
+        maxpow = 0 #TODO : measure max power
+        pow_3dB = maxpow - 3
+        fmin = 0 #TODO : measure f-3dB min freq (at power = pow_3dB)
+        fmax = 0 #TODO : measure f-3dB max freq (at power = pow_3dB)
+        bp = fmax - fmin
         print("Mesure terminée")
-        #TODO : return results = self.result
+        self.result = bp
 
 class BandeRejet (Measure) :
     def __init__(self,rejection) :
@@ -80,10 +83,13 @@ class BandeRejet (Measure) :
     def getResults(self) :
         print("Mesure de la bande de réjection à " + str(self.rejection) + "dB")
         print("Mesure en cours...")
-        #TODO : measure max power
-        #TODO : measure f-XdB and delta f
+        maxpow = 0 #TODO : measure max power
+        pow_reject = maxpow - self.rejection
+        fmin = 0 #TODO : measure f-XdB min freq (at power = pow_reject)
+        fmax = 0 #TODO : measure f-XdB max freq (at power = pow_reject)
+        br = fmax - fmin
         print("Mesure terminée")
-        #TODO : return results = self.result
+        self.result = br
 
 class Selectivite_formfactor (Measure) :
     def __init__(self,rejection) :
