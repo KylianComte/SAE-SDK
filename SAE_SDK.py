@@ -118,7 +118,7 @@ response = input()
 if response == 'O' :
     print("Saisir le chemin d'accès de l'image à inserer")
     path_image = input()
-    mondoc = Report(nom_techniciens, "Mesure.pdf", r"C:\Users\mar04\OneDrive\Images\chaine.jpg")
+    mondoc = Report(nom_techniciens, "Mesure.pdf", "chaine.jpg")
     mondoc.create_pdf_image()
 else : 
     mondoc = Report(nom_techniciens, "Mesure.pdf", None)
