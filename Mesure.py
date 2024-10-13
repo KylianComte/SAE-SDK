@@ -52,7 +52,7 @@ class FrequenceCentrale (Measure) :
     def getResults(self) :
         print("Mesure de la fréquence centrale")
         print("Mesure en cours...")
-        fcent = 0 #TODO : measure max power
+        fcent = 0 #TODO : measure frequence at max power
         print("Mesure terminée")
         self.result = fcent
 

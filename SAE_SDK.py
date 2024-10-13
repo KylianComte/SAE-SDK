@@ -20,7 +20,8 @@ def instrumentscan() :
 
 
 ### Main ###
-print("Bienvenue dans le SAE SDK")
+print("Bienvenue dans le programme de la SAE SDK")
+print("Ce programme ne fonctionne qu'en mode simulation et prend ses données dans le fichier custom.yaml")
 print("Programme créé par RUSSO Martin et COMTE Kylian")
 print("Pour commencer, veuillez brancher les instruments et appuyer sur entrée")
 input()
@@ -69,36 +70,42 @@ print("3. Bande passante 3dB")
 print("4. Bande de rejection à XXdB")
 print("5. Séléctivité, facteur de forme")
 print("6. Pertes par reflexion (S11)")
+print("Les mesures entierement implémentées sont les mesures 2 et 6")
 
 choix = int(input())
 while (choix < 1 or choix > 6) :
     print("Entrée invalide : Veuillez choisir un nombre entre 1 et 6")
     choix = int(input())
 
+if choix != 2 and choix != 6 :
+    print("Mesure non implémentée intégralement")
+    print("Risque de plantage non negligeable")
+    input("Appuyez sur entrée pour continuer")
+
 if (choix == 1) :
     mesure = FrequenceCentrale()
     mesure.setInstrument(instrument)
     mesure.getResults()
-if (choix == 2) :
+elif (choix == 2) :
     frequence = int(input("Entrez la fréquence de mesure (MHz)"))
     mesure = PertesInsertion(frequence)
     mesure.setInstrument(instrument)
     mesure.getResults()
-if (choix == 3) :
+elif (choix == 3) :
     mesure = BandePassante()
     mesure.setInstrument(instrument)
     mesure.getResults()
-if (choix == 4) :
+elif (choix == 4) :
     rejet = int(input("Entrez la valeur de rejet (dB)"))
     mesure = BandeRejet(rejet)
     mesure.setInstrument(instrument)
     mesure.getResults()
-if (choix == 5) :
+elif (choix == 5) :
     rejet = int(input("Entrez la valeur de rejet (dB)"))
     mesure = Selectivite_formfactor(rejet)
     mesure.setInstrument(instrument)
     mesure.getResults()
-if (choix == 6) :
+elif (choix == 6) :
     frequence = int(input("Entrez la fréquence de mesure (MHz)"))
     mesure = PertesReflection(frequence)
     mesure.setInstrument(instrument)
@@ -110,16 +117,17 @@ print("Résultat :")
 print(resultat.resultat)
 
 print("Generation du rapport...")
-mondoc = Report()
-nom_techniciens = input("Entrez le nom des techniciens séparés par une virgule\n")
-nom_document = input("Entrez le nom du document\n")
+nom_techniciens = input("Entrez le nom des techniciens séparés par un 'et'\n")
+nom_document = input("Entrez le nom du document (pensez au .pdf)\n")
 print("Voulez-vous inserez une image de la mesure ? O/N")
 response = input()
 if response == 'O' :
-    print("Saisir le chemin d'accès de l'image à inserer")
+    print("L'image doit se trouver dans le dossier racine du programme")
+    print("Entrez le nom de l'image (avec l'extension)")
+    print("Pour utiliser l'image deja dans le dossier tapez : chaine.jpg")
     path_image = input()
-    mondoc = Report(nom_techniciens, "Mesure.pdf", "chaine.jpg")
+    mondoc = Report(nom_techniciens, nom_document, path_image, resultat.resultat)
     mondoc.create_pdf_image()
 else : 
-    mondoc = Report(nom_techniciens, "Mesure.pdf", None)
+    mondoc = Report(nom_techniciens, nom_document, None, resultat.resultat)
     mondoc.create_pdf()
