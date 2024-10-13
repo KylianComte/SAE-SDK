@@ -77,11 +77,6 @@ while (choix < 1 or choix > 6) :
     print("Entrée invalide : Veuillez choisir un nombre entre 1 et 6")
     choix = int(input())
 
-if choix != 2 and choix != 6 :
-    print("Mesure non implémentée intégralement")
-    print("Risque de plantage non negligeable")
-    input("Appuyez sur entrée pour continuer")
-
 if (choix == 1) :
     mesure = FrequenceCentrale()
     mesure.setInstrument(instrument)
